@@ -12,8 +12,16 @@ export const Container = styled.View`
 `;
 
 export const ScrollView = styled.ScrollView`
-  height: 50%;
-  /* border: 2px solid black; */
+  display: flex;
+`;
+
+export const ScrollViewContainer = styled.View`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: ${hp(6)}px 0;
+  padding: 0 ${wp(9)}px;
+  gap: ${hp(4)}px;
 `;
 
 export const CardContainer = styled.View`
@@ -22,10 +30,8 @@ export const CardContainer = styled.View`
     flex-flow: row wrap;
     justify-content: space-between;
     align-content: flex-start;
-    padding: 0 ${wp(8)}px;
     gap: 20px;
     flex: 1;
-    padding-top: ${hp(10)}px;
   `}
 `;
 

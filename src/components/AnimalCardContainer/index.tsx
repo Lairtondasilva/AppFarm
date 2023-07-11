@@ -13,7 +13,7 @@ const AnimalCardContainer = ({
           id={id}
           urlImage={urlImage}
           title={title}
-          pageUrl={pageUrl}
+          pageUrl={pageUrl || "Animal"}
         />
       ))}
     </Styled.Container>

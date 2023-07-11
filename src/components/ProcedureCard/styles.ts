@@ -7,22 +7,21 @@ import {
 export const Container = styled.View`
   ${({ theme }) => css`
     display: flex;
-    width: ${wp(37)}px;
-    height: ${hp(24)}px;
-    justify-content: center;
+    height: ${hp(18)}px;
+    background-color: #fff;
     align-items: center;
-    border-radius: 10px;
-    border: 1px solid #cebebe;
-    background: #fff;
+    justify-content: center;
+    flex-flow: row nowrap;
+    gap: ${wp(3)}px;
+    flex: 1;
     border-radius: 10px;
     elevation: 20;
-    gap: ${hp(0.4)}px;
   `}
 `;
 
 export const Image = styled.Image`
-  width: ${wp(30)}px;
-  height: ${hp(14)}px;
+  width: 64px;
+  height: 64px;
 `;
 
 export const Text = styled.Text`

@@ -10,9 +10,7 @@ export const Container = styled.View`
     flex-flow: row wrap;
     justify-content: space-between;
     align-content: flex-start;
-    padding: 0 ${wp(8)}px;
     gap: 20px;
     flex: 1;
-    padding-top: ${hp(10)}px;
   `}
 `;

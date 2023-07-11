@@ -4,7 +4,12 @@ import * as Styled from "./styles";
 import React, { useContext } from "react";
 import NavigationContext from "../../context/NavigationContext";
 
-const AnimalCard = ({ title, urlImage, pageUrl, id }: AnimalCardProps) => {
+const AnimalCard = ({
+  title,
+  urlImage,
+  pageUrl = "Animal",
+  id,
+}: AnimalCardProps) => {
   const navigate = useContext(NavigationContext);
   return (
     <TouchableOpacity
