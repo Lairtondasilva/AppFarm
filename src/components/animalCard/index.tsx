@@ -19,11 +19,10 @@ const AnimalCard = ({
       activeOpacity={0.9}
     >
       <Styled.Container>
-        <Styled.Image
-          source={{
-            uri: urlImage,
-          }}
-        />
+        <Styled.containerImage
+          source={{ uri: urlImage }}
+          resizeMode="contain"
+        ></Styled.containerImage>
         <Styled.Text>{title}</Styled.Text>
       </Styled.Container>
     </TouchableOpacity>

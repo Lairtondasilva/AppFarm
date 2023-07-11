@@ -3,12 +3,15 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { Dimensions } from "react-native";
+
+const { height } = Dimensions.get("window");
 
 export const Container = styled.View`
   ${({ theme }) => css`
     display: flex;
     width: ${wp(37)}px;
-    height: ${hp(24)}px;
+    height: ${height > 1920 ? hp(22) : hp(24)}px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -16,13 +19,13 @@ export const Container = styled.View`
     background: #fff;
     border-radius: 10px;
     elevation: 20;
-    gap: ${hp(0.4)}px;
+    gap: ${hp(0.3)}px;
   `}
 `;
 
-export const Image = styled.Image`
+export const containerImage = styled.ImageBackground`
   width: ${wp(30)}px;
-  height: ${hp(14)}px;
+  height: ${height > 1920 ? hp(12) : hp(14)}px;
 `;
 
 export const Text = styled.Text`
