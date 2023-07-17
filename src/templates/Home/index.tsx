@@ -6,7 +6,7 @@ import ProcedureCard from "../../components/ProcedureCard";
 
 export default function Home() {
   return (
-    <Styled.Container>
+    <>
       <Header arrow={false}>Home</Header>
       <Styled.ScrollView>
         <Styled.ScrollViewContainer>
@@ -14,6 +14,6 @@ export default function Home() {
           <ProcedureCard />
         </Styled.ScrollViewContainer>
       </Styled.ScrollView>
-    </Styled.Container>
+    </>
   );
 }

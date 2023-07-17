@@ -2,19 +2,23 @@ import { TouchableOpacity } from "react-native";
 import { AnimalCardProps } from "./interfaces";
 import * as Styled from "./styles";
 import React, { useContext } from "react";
-import NavigationContext from "../../context/NavigationContext";
+import NavigationProvider from "../../context/NavigationProvider";
+import { getAnimalsBySpecie } from "../../services/Animals";
+import { ApiContext } from "../../context/ApiContext";
 
 const AnimalCard = ({
   title,
   urlImage,
-  pageUrl = "Animal",
+  pageUrl = "Animals",
   id,
 }: AnimalCardProps) => {
-  const navigate = useContext(NavigationContext);
+  const navigation = useContext(NavigationProvider);
+  const { dispatch } = useContext(ApiContext);
   return (
     <TouchableOpacity
-      onPress={() => {
-        navigate(pageUrl);
+      onPress={async () => {
+        await getAnimalsBySpecie({ specie: title, dispatch: dispatch });
+        navigation.navigate(pageUrl);
       }}
       activeOpacity={0.9}
     >

@@ -7,7 +7,7 @@ import {
 
 export const Container = styled.View`
   ${({ theme }) => css`
-    padding: 0 ${hp(3)}px;
+    padding: 0 ${wp(3)}px;
     background-color: ${theme.colors.primary};
     height: ${hp(15)}px;
     display: flex;
@@ -21,11 +21,12 @@ export const Container = styled.View`
 export const Navbar = styled.View<NavbarProps>`
   ${({ theme, arrow }) => css`
     height: ${hp(6)}px;
+    width: ${arrow ? wp(100) - wp(15) : wp(100)}px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-right: ${arrow ? hp(3) + "px" : "0"};
+    padding-right: ${arrow ? wp(3) + "px" : "0"};
   `}
 `;
 

@@ -1,4 +1,4 @@
-import AnimalCard from "../animalCard";
+import AnimalCard from "../AnimalCard";
 import { AnimalCardContainerProps } from "./interfaces";
 import * as Styled from "./styles";
 
@@ -13,7 +13,7 @@ const AnimalCardContainer = ({
           id={id}
           urlImage={urlImage}
           title={title}
-          pageUrl={pageUrl || "Animal"}
+          pageUrl={pageUrl || "Animals"}
         />
       ))}
     </Styled.Container>

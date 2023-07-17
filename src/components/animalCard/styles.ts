@@ -11,7 +11,7 @@ export const Container = styled.View`
   ${({ theme }) => css`
     display: flex;
     width: ${wp(37)}px;
-    height: ${height > 1920 ? hp(22) : hp(24)}px;
+    height: ${height > 684 ? hp(22) : hp(24)}px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
@@ -25,7 +25,7 @@ export const Container = styled.View`
 
 export const containerImage = styled.ImageBackground`
   width: ${wp(30)}px;
-  height: ${height > 1920 ? hp(12) : hp(14)}px;
+  height: ${height > 684 ? hp(12) : hp(14)}px;
 `;
 
 export const Text = styled.Text`

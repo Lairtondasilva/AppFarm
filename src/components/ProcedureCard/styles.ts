@@ -3,16 +3,18 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { Dimensions } from "react-native";
+const { height } = Dimensions.get("window");
 
 export const Container = styled.View`
   ${({ theme }) => css`
     display: flex;
-    height: ${hp(18)}px;
+    height: ${height > 684 ? hp(16) : hp(18)}px;
     background-color: #fff;
     align-items: center;
     justify-content: center;
     flex-flow: row nowrap;
-    gap: ${wp(3)}px;
+    gap: ${wp(4)}px;
     flex: 1;
     border-radius: 10px;
     elevation: 20;

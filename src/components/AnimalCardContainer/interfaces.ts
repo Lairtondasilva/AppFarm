@@ -1,4 +1,4 @@
-import { AnimalCardProps } from "../animalCard/interfaces";
+import { AnimalCardProps } from "../AnimalCard/interfaces";
 
 export interface AnimalCardContainerProps {
   AnimalCardInfoList: AnimalCardProps[];

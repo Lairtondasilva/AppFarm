@@ -4,21 +4,32 @@ import {
   NavigationContainerRef,
 } from "@react-navigation/native";
 import { MyStack } from "./stack.routes";
-import React from "react";
-import NavigationContext from "../context/NavigationContext";
+import React, { useContext } from "react";
+import NavigationProvider from "../context/NavigationProvider";
+import { ApiContext } from "../context/ApiContext";
+import Loading from "../components/Loading";
 
 export function Routes() {
   const navigationRef =
     React.useRef<NavigationContainerRef<ParamListBase>>(null);
 
-  function navigate(routeName: string, params?: object) {
-    navigationRef.current?.navigate(routeName, params);
+  const { state } = useContext(ApiContext);
+
+  function navigation() {
+    return {
+      navigate: (routeName?: string, params?: object) => {
+        navigationRef.current?.navigate(routeName, params);
+      },
+      goBack: () => {
+        navigationRef.current?.goBack();
+      },
+    };
   }
   return (
-    <NavigationContext.Provider value={navigate}>
+    <NavigationProvider.Provider value={navigation()}>
       <NavigationContainer ref={navigationRef}>
-        <MyStack />
+        {state.isLoading ? <Loading /> : <MyStack />}
       </NavigationContainer>
-    </NavigationContext.Provider>
+    </NavigationProvider.Provider>
   );
 }
