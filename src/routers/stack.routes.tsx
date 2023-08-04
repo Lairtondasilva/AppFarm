@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "../templates/Home";
 import ListAnimal from "../templates/ListAnimal";
+import RegisterAnimal from "../templates/RegisterAnimal";
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,13 @@ export function MyStack() {
       <Stack.Screen
         name="Animals"
         component={ListAnimal}
+        options={{
+          title: "Home",
+        }}
+      />
+      <Stack.Screen
+        name="RegisterAnimals"
+        component={RegisterAnimal}
         options={{
           title: "Home",
         }}

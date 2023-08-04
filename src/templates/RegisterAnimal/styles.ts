@@ -1,8 +1,11 @@
 import { styled, css } from "styled-components/native";
+import { Dimensions } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+
+const { height } = Dimensions.get("window");
 
 export const Container = styled.View`
   ${({ theme }) => css`
@@ -11,10 +14,22 @@ export const Container = styled.View`
     width: 100%;
     flex-direction: column;
     display: flex;
-    gap: ${hp(4)}px;
-    flex: 1;
+    gap: ${hp(1.5)}px;
+    width: 100%;
     padding-bottom: 12px;
   `}
+`;
+
+export const Input = styled.TextInput`
+  border: 2px solid #a8a8b3;
+  border-radius: 8px;
+  font-size: 16px;
+  padding-left: 12px;
+  height: ${height > 684 ? hp(6) : hp(7)}px;
+`;
+
+export const Text = styled.Text`
+  font-size: 18px;
 `;
 
 export const ScrollView = styled.ScrollView``;

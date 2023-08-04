@@ -13,10 +13,11 @@ export const Container = styled.View`
   width: 100%;
   height: ${height > 684 ? hp(12) : hp(14)}px;
   background: #dfdfdf;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 8px;
   flex-direction: row;
   gap: 16px;
+  elevation: 4;
 `;
 
 export const ImageContainer = styled.View`

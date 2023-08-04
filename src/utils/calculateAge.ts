@@ -10,9 +10,6 @@ export function calculateAge(birthdate: string | Date): string {
   const months = currentDate.diff(birthdateObj, "months");
   birthdateObj.add(months, "months");
 
-  const weeks = currentDate.diff(birthdateObj, "weeks");
-  birthdateObj.add(weeks, "weeks");
-
   const days = currentDate.diff(birthdateObj, "days");
 
   let age = "";
@@ -20,20 +17,15 @@ export function calculateAge(birthdate: string | Date): string {
   if (years > 0) {
     age += `${years} ano${years > 1 ? "s" : ""}`;
     if (months > 0) {
-      age += ` e ${months} mes${months > 1 ? "es" : ""}`;
+      age += ` e ${months} mês${months > 1 ? "es" : ""}`;
     }
   } else if (months > 0) {
-    age += `${months} mes${months > 1 ? "es" : ""}`;
-    if (weeks > 0) {
-      age += ` e ${weeks} sem${weeks > 1 ? "s" : ""}`;
-    }
-  } else if (weeks > 0) {
-    age += `${weeks} sem${weeks > 1 ? "anas" : "ana"}`;
+    age += `${months} mês${months > 1 ? "es" : ""}`;
     if (days > 0) {
-      age += ` e ${days} dias${days > 1 ? "s" : ""}`;
+      age += ` e ${days} dia${days > 1 ? "s" : ""}`;
     }
   } else {
-    age += `${days} dias${days > 1 ? "s" : ""}`;
+    age += `${days} dia${days > 1 ? "s" : ""}`;
   }
 
   return age;
